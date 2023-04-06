@@ -1,0 +1,30 @@
+//LCD text with incrementing number
+
+//Include the library code:
+#include <LiquidCrystal.h>
+
+//Start the time at 0
+int time = 0;
+
+//Initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
+
+void setup()
+{
+ //Set up the LCD's number of columns and rows: 
+ lcd.begin(16, 2);
+ // Print a message to the LCD.
+ lcd.print("LCD Display");
+}
+
+void loop()
+{
+ //Move cursor to second line, first position
+ lcd.setCursor(0,1);
+ //Print Current Time
+ lcd.print(time); 
+ //Wait 1 second
+ delay(1000);
+ //Increment the time
+ time++; 
+}
